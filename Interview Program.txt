@@ -1,0 +1,304 @@
+1.How to find duplicate characters in a string using java
+
+public class OccuranceOFChar1 {
+	public static void main(String[]args) {
+		
+		String s="Rahul Goswami";
+		int length= s.length();
+		System.out.println(length);
+		
+		int s_removal=s.replace("i", "").length();
+		int	count = length-s_removal;
+		System.out.println(count);
+		
+		char [] ch = s.toCharArray();
+		System.out.println(ch);
+		for (int i =0;i<length; i++) {
+			for(int j=i+1; j<length; j++) {
+				if(ch[i]==ch[j]) {
+					System.out.println("Duplicate charachter:-"+ ch[j]);
+					break;
+				}
+			}	
+		}		
+	}
+	
+}
+===========================================================================================================================================================================
+2.Count occurnace of words in to given string:
+
+public class HowToCountOccuranceOfString {
+	
+	
+	public static void main(String[] args) {
+		
+		String s="I am living in Pune";
+		int length=s.length();  //19
+		System.out.println(length);
+		
+		int afterremoval_ofstring=s.replace("a", "").length();
+		
+		int count=length-afterremoval_ofstring;
+		System.out.println(count);
+	}
+}
+==========================================================================================================================================================================
+3.Find out count of duplicate word in given strig:
+public class FindCountOfDuplicateWordInString {
+	
+	public static void main(String[] args) {
+	String s="Learn Java Learn API Learn Selenium";
+	int count;
+	s=s.toLowerCase();
+	System.out.println(s);
+	String words[]= s.split(" ");
+	System.out.println("Duplicate word is ====>");
+	for(int i=0; i<words.length;i++) {
+		count=1;
+		for(int j=i+1; j<words.length; j++) {
+			if(words[i].equals(words[j])) {
+				count++;
+				words[j]="0";
+			}
+		}
+		if(count>1 && words[i]!= "0") {
+			System.out.println(words[i]);
+			
+		}
+	}		
+	}	
+}
+======================================================================================================================================================================
+4. Find out element in array::
+
+public class FindingOutElementInArray {
+	
+	public static void main(String[] args) {
+		int arr[]= {1,2,7,10,9,80};
+		int A=2;
+		int temp=0;
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]==A) {
+				System.out.println("item is present "+i+" of index");
+				temp=temp+1;
+				
+			}
+		}
+		if(temp==0) {
+			System.out.println("item is not present in array");
+		}
+
+	}
+			
+}
+=========================================================================================================================================================================
+5.String is reverse:
+public class revString{
+public static void main(String[] args){
+
+String s="Rahul";
+String rev = "";
+
+for(int i=s.length()-1; i>=0; i--){
+rev=rev+s.charAt(i)
+}
+
+System.out.Println("reverse of s is"+ rev);
+}
+}
+=========================================================================================================================================================================
+6.String is palindrome:
+	public static void main(String[] args) {
+		
+		String s="madam";
+		String rev="";
+		for(int i=s.length()-1; i>=0;i--) {
+			rev=rev+s.charAt(i);
+		}
+		System.out.println(rev);
+		
+		if(s.equals(rev)) {
+			System.out.println("String is palindrome");
+		}else {
+			System.out.println("String is not palindrome");
+		}	
+	}
+}
+==================================================================================================================================================================
+7.Linear search in given array:
+public class LinearSearchInGivenArray {
+	
+	public static void main(String[] args) {
+		
+		int a[]= {10,20,50,40,70,80,30};
+		int b=80;
+		int temp=0;
+		for(int i=0; i<a.length;i++) {
+			
+			if(a[i]==b) {
+				System.out.println("Item is at this position "+i+" ");
+				temp=temp+1;
+			}
+		}
+		if(temp==0) {
+		System.out.println("Item not found");
+		}	
+	}	
+}
+======================================================================================================================================================================
+8.Fibonacci series:
+
+public class FibbonacciSeries {
+
+	public static void main(String[] args) {
+		
+		int a=0;
+		int b=1;
+		int c;
+		
+		for(int i = 1; i<12; i++) {
+			c=a+b;
+			System.out.println(c);
+			a=b;   // swap
+			b=c;	//swap
+		}
+		
+		//0 = a , 1=b c=(a+b)=1
+	} //0 1 2 3 5 8 13 21 34 55 89 	
+}
+======================================================================================================================================================================
+
+9.Swipe two no without using third variable::
+
+public class ToSwipe2No {
+	
+	public static void main(String[] args) {
+		
+	int a=20;
+	int b=10;
+	
+	a=(a+b);//30
+	b=(a-b);//20
+	a=(a-b);//10
+	System.out.println(a+" "+b);
+	
+		}
+}
+================================================================================================================================================================
+10.public class PrimeNumber {
+	public static void main(String args[]) {
+		int no=11;
+		int temp=0;
+		
+		for(int i=2; i<=no-1; i++) {
+			
+			if(no%i==0) {
+				temp=temp+1;
+			}
+		}
+		if(temp>0) {
+			System.out.println("Number is not prime");
+		}else {
+			System.out.println("Number is prime");
+		}		
+	}
+}
+==================================================================================================================================================================
+
+11.To get digits from the string:
+
+	public static void main(String[] args) {
+		String s="rhrnf8877";
+		char ch[]=s.toCharArray();
+		StringBuilder sb=new StringBuilder();
+		for(char c:ch) {
+			if(Character.isDigit(c)) {
+				sb.append(c);
+			}
+		}
+	System.out.println(sb);
+		
+		
+	}
+	}
+
+========================================================================================================================================================================
+====================================================================================================================================================================
+12.public class RemoveDuplicateWordFromSTRING {
+
+	public static void main(String[] args) {
+		String s="I am Rahul I am ";
+		
+		String arr[]=s.split(" ");
+		Set<String> myset = new LinkedHashSet<String>();
+		for(String x: arr) {
+			myset.add(x);
+		}
+		Iterator<String> itr=myset.iterator();
+		while(itr.hasNext()) {
+			System.out.print(" "+itr.next());
+		}
+		
+	}
+	
+}
+=========================================================================================================================================================================
+13. factorial of numbers:
+public class FactorialOfNo {
+	public static void main(String[] args) {
+	
+		int a=5; 
+		int fact=1;
+		
+		for(int i=1; i<=a; i++) {
+			fact=fact*i;//1*1=1,2,6, 24, , 
+		}
+		System.out.println("factorial of Number:"+ fact);
+	}
+}
+====================================================================================================================================================================
+14. ArmStrong Number: 
+	public static void main(String[] args) {
+		
+	
+	int num=153, result=0, rem;
+	int temp=num;
+	
+	while(num>0) {
+		rem=num%10;
+		num=num/10;
+		result=result+(rem*rem*rem);
+		
+	}
+	if(result==temp) {
+		System.out.println("Number is armstrong No.");
+	}else {
+		System.out.println("Number is not armstrong No.");
+	}
+==================================================================================================================================================================
+15. To find out number is palindrom or not:
+
+	
+	public static void main(String[] args) {
+		
+		int num=156; int sum=0;
+		int rem; int temp=num;
+		
+		while(num>0) { 		//ok	ok	ok
+		rem=num%10;			//rem=1		//5 //1
+		sum=(sum*10)+rem;	//(0*10)+1=1	//(1*10)+5=15 //(15*10)+1=151
+		num=num/10;			//15 //1	0
+			
+		}
+		if(temp==sum) {
+			System.out.println("Number is palindrom");
+		}else {
+			System.out.println("Number is not palindrom");
+		}
+	}
+
+======================================================================================================================================================================
+ 
+
+
+
